@@ -1,13 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">}
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, inital-scale=1.0">
     <title>Forign Import-Signup</title>
-    <link rel="stylesheet" href="./pay.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{% static 'css/pay.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
@@ -34,28 +35,28 @@
 
     <div class=pay-container>
         <div class="pay-form">
-            <img src="../pics/cbe.png" />
+            <img src="{% static 'pics/cbe.png' %}" />
             <input class="pay-input" type="text" />
             <button class="paybtn pay0">pay</button>
         </div>
         <div class="pay-form">
-            <img src="../pics/telebirr.jpg" />
+            <img src="{% static 'pics/telebirr.jpg' %}" />
             <input class="pay-input" type="text" />
             <button class="paybtn pay1">pay</button>
         </div>
         <div class="pay-form">
-            <img src="../pics/m-birr.jpg" />
+            <img src="{% static 'pics/m-birr.jpg' %}" />
             <input class="pay-input" type="text" />
             <button class="paybtn pay2">pay</button>
         </div>
         <div class="pay-form">
-            <img src="../pics/hellocash.png" />
+            <img src="{% static 'pics/hellocash.png' %}" />
             <input class="pay-input" type="text" />
             <button class="paybtn pay3">pay</button>
         </div>
 
     </div>
-    <script src="./script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>

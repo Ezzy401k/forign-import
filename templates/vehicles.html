@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,9 +10,9 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="./scroll.css">
-    <link rel="stylesheet" href="./vehecile.css">
-    <link rel="stylesheet" href="./button.css">
+    <link rel="stylesheet" href="{% static 'css/scroll.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vehecile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/button.css' %}">
 </head>
 
 <body>
@@ -23,11 +24,11 @@
         <a href="#" class="logo"> <span>foreign</span>import</a>
 
         <nav class="navbar">
-            <a href="../main.html">home</a>
-            <a href="../main.html #services">services</a>
-            <a href="../main.html #features">features</a>
-            <a href="../main.html #reviews">reviews</a>
-            <a href="../main.html #contact">contacts</a>
+            <a href="main">home</a>
+            <a href="{% url 'main' %}#services">services</a>
+            <a href="{% url 'main' %}#features">features</a>
+            <a href="{% url 'main' %}#reviews">reviews</a>
+            <a href="{% url 'main' %}#contact">contacts</a>
         </nav>
 
         <div id="login-btn">
@@ -58,126 +59,35 @@
         <section class="group-container">
             <section class="group" id="group">
 
-                <h1 class="heading"><span>ford</span></h1>
+                <h1 class="heading"><span>All Cars</span></h1>
 
                 <div class="swiper group-slider ">
 
                     <div class="swiper-wrapper car-swiper">
+                        {% for car in cars %}
+                            <div class="swiper-slide box">
+                                <img src="{{car.img.url}}" alt="">
+                                <div class="free">
+                                    <h2>{{car.name}}</h2>
+                                    <p>{{car.desc}}</p>
+                                    <h3><font color='yellow'>Price: {{car.price}}$</font></h3>
+                                    <section class="effect_buttons">
 
-                        <div class="swiper-slide box">
-                            <img src="../pics/ecosport.png" alt="">
-                            <div class="free">
-                                <h2> Ford EcoSport</h2>
-                                <p>The 2021 Ford EcoSport offers available Intelligent 4WD and a sporty performance that makes it ideal for care-free everyday driving. Wherever you're headed, the EcoSport provides you with a stylish interior and intelligent
-                                    technology designed to help keep you connected.</p>
-                                <section class="effect_buttons">
-
-
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
-                                        <svg>
-                                            <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-                                          </svg> GET
-                                    </a>
-
-                                </section>
-                            </div>
-                        </div>
-                        <div class="swiper-slide box">
-                            <img src="../pics/ford explorer.png" alt="">
-                            <div class="free">
-                                <h2>Ford Explorer</h2>
-                                <p>The 2022 Ford Explorer is primed for modern-day exploration. Its adjustable interior offers space and comfort for the whole family. And it helps you make the most of every experience with connected technology and an athletic
-                                    build that's ready for whatever lies ahead.</p>
-                                <section class="effect_buttons">
-
-
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
-                                        <svg>
+                                        <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
+                                            <svg>
                                                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-                                              </svg> GET
-                                    </a>
+                                            </svg> GET
+                                        </a>
 
-                                </section>
+                                    </section>
+                                </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide box">
-                            <img src="../pics/f-150.png" alt="">
-                            <div class="free">
-                                <h2>FORD F-150</h2>
-                                <p>The all-new F-150 is purpose-built from the ground up — redesigned to be the toughest, most productive F-150 ever. This is what happens when you merge premium-grade muscle with finely tuned intelligence and design. The
-                                    2021 North American Truck of the Year.</p>
-                                <section class="effect_buttons">
+                        {% endfor %}
 
-
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
-                                        <svg>
-                                                <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-                                              </svg> GET
-                                    </a>
-
-                                </section>
-                            </div>
-                        </div>
-                        <div class="swiper-slide box">
-                            <img src="../pics/transit van.png" alt="">
-                            <div class="free">
-                                <h2>FORD TRANSIT VAN</h2>
-                                <p>The 2022 Transit Van was designed with your comfort and convenience in mind. That's why it can be configured to your needs, with available seating for up to 15. In addition, our Ford Co-Pilot360™ Technologies10 help you
-                                    feel comfortable and connected on the road.</p>
-                                <section class="effect_buttons">
-
-
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
-                                        <svg>
-                                                <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-                                              </svg> GET
-                                    </a>
-
-                                </section>
-                            </div>
-                        </div>
-                        <div class="swiper-slide box">
-                            <img src="../pics/escape.png" alt="">
-                            <div class="free">
-                                <h2>FORD ESCAPE</h2>
-                                <p>Perfect for those who lead an active lifestyle and welcome whatever the day may bring, the 2022 Ford Escape features plenty of options for you to express yourself, wherever — and however — you go, with three engines and
-                                    four powertrains. Plus, there are seven standout packages to choose from along with three new colors.</p>
-                                <section class="effect_buttons">
-
-
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
-                                        <svg>
-                                                <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-                                              </svg> GET
-                                    </a>
-
-                                </section>
-                            </div>
-                        </div>
-                        <div class="swiper-slide box">
-                            <img src="../pics/mustang.png" alt="">
-                            <div class="free">
-                                <h2>FORD MUSTANG MACH-E</h2>
-                                <p>Built from all the passion of its iconic heritage, Mustang Mach-E is the new shape of freedom. Get ready for 0-60 thrills, expansive range and zero tailpipe emissions.</p>
-                                <section class="effect_buttons">
-
-
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
-                                        <svg>
-                                            <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-                                          </svg> GET
-                                    </a>
-
-                                </section>
-                            </div>
-                        </div>
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
             </section>
-            <div class="more">
-                <a href="https://shop.ford.com/showroom/?linktype=brand&intcmp=hp-showbb#/" class="more"><input class="btn1" type="button" value="more cars"></a>
-            </div>
 
             <section class="group" id="group">
 
@@ -188,15 +98,16 @@
                     <div class="swiper-wrapper car-swiper">
 
                         <div class="swiper-slide box">
-                            <img src="../pics/corolla.png" alt="">
+                            <img src="{% static 'pics/corolla.png' %}" alt="">
                             <div class="free">
                                 <h2>toyota corolla</h2>
                                 <p>Stand out in this fun-to-drive Toyota car. It features impressive EPA-estimated fuel economy ratings up to 31/40/34 (city/highway/combined) MPG43 on gas models, a thoughtful interior design, and aggressive exterior stance
                                     that will make an impression everywhere you go.</p>
+                                <h3><font color='yellow'>Price: 20175$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                               </svg> GET
@@ -206,14 +117,15 @@
                             </div>
                         </div>
                         <div class="swiper-slide box">
-                            <img src="../pics/Avalon.png" alt="">
+                            <img src="{% static 'pics/Avalon.png' %}" alt="">
                             <div class="free">
                                 <h2>Toyota Avalon</h2>
                                 <p>Experience affordable elegance with this Toyota car that has a daring design, 9-in. touchscreen, and all the media apps you could want. Enjoy your ride.</p>
+                                <h3><font color='yellow'>Price: 36175$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                             <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                           </svg> GET
@@ -223,15 +135,16 @@
                             </div>
                         </div>
                         <div class="swiper-slide box">
-                            <img src="../pics/prius.png" alt="">
+                            <img src="{% static 'pics/prius.png' %}" alt="">
                             <div class="free">
                                 <h2>Toyota Prius</h2>
                                 <p>This Toyota car has impressive EPA-estimated fuel economy ratings of up to 58/53/56 (city/highway/combined) MPG43 and stylized interior touches that help take your commute from boring to soaring.Turn heads with the iconic
                                     look of this impressive Toyota car.</p>
+                                    <h3><font color='yellow'>Price: 24545$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                               </svg> GET
@@ -241,15 +154,16 @@
                             </div>
                         </div>
                         <div class="swiper-slide box">
-                            <img src="../pics/rav4.png" alt="">
+                            <img src="{% static 'pics/rav4.png' %}" alt="">
                             <div class="free">
                                 <h2>RAV4</h2>
                                 <p>Express your sense of style with a RAV4 Hybrid that fits you best. From a selection of 17- and 18-in. alloy wheels to an available two-tone roof, 60 there's a RAV4 that will help you stand out. Now with an enhanced 10-year
                                     Hybrid Battery Warranty 142 from date of first use, or 150,000 miles, whichever comes first.</p>
+                                <h3><font color='yellow'>Price: 26178$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                               </svg> GET
@@ -259,14 +173,15 @@
                             </div>
                         </div>
                         <div class="swiper-slide box">
-                            <img src="../pics/mirai.png" alt="">
+                            <img src="{% static 'pics/mirai.png' %}" alt="">
                             <div class="free">
                                 <h2>Mirai</h2>
                                 <p>Mirai generates power by combining hydrogen with oxygen from the outside air.</p>
+                                <h3><font color='yellow'>Price: 21764$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                             <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                           </svg> GET
@@ -276,14 +191,15 @@
                             </div>
                         </div>
                         <div class="swiper-slide box">
-                            <img src="../pics/chr.png" alt="">
+                            <img src="{% static 'pics/chr.png' %}" alt="">
                             <div class="free">
                                 <h2>C-HR</h2>
                                 <p>From black door handles to 18-in. black alloy wheels, C-HR Nightshade shows off a look and feel that is undoubtedly expressive.</p>
+                                <h3><font color='yellow'>Price: 23175$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                             <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                           </svg> GET
@@ -308,15 +224,16 @@
                     <div class="swiper-wrapper car-swiper">
 
                         <div class="swiper-slide box">
-                            <img src="../pics/kona n.png" alt="">
+                            <img src="{% static 'pics/kona n.png' %}" alt="">
                             <div class="free">
                                 <h2>KONA N</h2>
                                 <p>The first SUV to wear an N badge—KONA N just may be in a class of its own. As a high-performance compact SUV, it's capable of handling the nastiest corners at Nürburgring. As a highly practical SUV, it's just capable, period.
                                     And it's got all the goods that make every N a rush to drive—from customizable drive modes to the signature crackle-and-pops of the exhausts. </p>
+                                <h3><font color='yellow'>Price: 34076$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                               </svg> GET
@@ -326,15 +243,16 @@
                             </div>
                         </div>
                         <div class="swiper-slide box">
-                            <img src="../pics/TUCSON.png" alt="">
+                            <img src="{% static 'pics/TUCSON.png' %}" alt="">
                             <div class="free">
                                 <h2>TUCSON</h2>
                                 <p>The all-new 2022 TUCSON is the defining answer after our engineers and designers asked how we can make a great SUV even greater. We questioned every detail. Every assumption. We gave it a daring new look inside and out.
                                     Game-changing technology and safety. Outfitted it with available HTRAC All Wheel Drive. And now, for the first time, it comes in hybrid and plug-in hybrid models. Without question it's our best TUCSON ever.</p>
+                                <h3><font color='yellow'>Price: 25775$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                               </svg> GET
@@ -344,15 +262,16 @@
                             </div>
                         </div>
                         <div class="swiper-slide box">
-                            <img src="../pics/santa fe.png" alt="">
+                            <img src="{% static 'pics/santa fe.png' %}" alt="">
                             <div class="free">
                                 <h2>SANTA FE</h2>
                                 <p>Whatever's on your to-do list—even the most epic adventures—SANTA FE is up for making your journey the best it can be. Stylish, safe, and sure, our HTRAC AWD family SUV is on point for all the excursions your family can
                                     muster. Plus, all this is available now in SANTA FE Hybrid and our turbocharged SANTA FE Plug-in Hybrid.</p>
+                                <h3><font color='yellow'>Price: 27834$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                               </svg> GET
@@ -362,14 +281,15 @@
                             </div>
                         </div>
                         <div class="swiper-slide box">
-                            <img src="../pics/elentra.png" alt="">
+                            <img src="{% static 'pics/elentra.png' %}" alt="">
                             <div class="free">
                                 <h2>ELANTRA</h2>
                                 <p>ELANTRA takes top honors for its forward-thinking design and next-level technology. Looking boss and loaded with features like big, bold digital displays and wireless everything, it's easy to see why ELANTRA is a 100% winner.</p>
+                                <h3><font color='yellow'>Price: 19843$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                             <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                           </svg> GET
@@ -379,15 +299,16 @@
                             </div>
                         </div>
                         <div class="swiper-slide box">
-                            <img src="../pics/sonata.png" alt="">
+                            <img src="{% static 'pics/sonata.png' %}" alt="">
                             <div class="free">
                                 <h2>SONATA</h2>
                                 <p>Suddenly the ordinary is extraordinary. Innovation after inspired innovation makes this SONATA the best thing to happen to sedans in forever, astonishing the world with reimagined everything. From sexy sports coupe design
                                     cues to tech and safety that bound into the future, SONATA's done it again.</p>
+                                <h3><font color='yellow'>Price: 24675$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                               </svg> GET
@@ -397,15 +318,16 @@
                             </div>
                         </div>
                         <div class="swiper-slide box">
-                            <img src="../pics/IONIQ 5.png" alt="">
+                            <img src="{% static 'pics/IONIQ 5.png' %}" alt="">
                             <div class="free">
                                 <h2>IONIQ 5</h2>
                                 <p>There's nothing quite like it on the road. Not only because IONIQ 5 is the first of its kind—the beginning of our new EV series. It's also because every square inch was created to surprise you. Like design that defies definition,
                                     an interior that's huge on space and innovation, and tech that gives you a head start on the future. The experience is an electricity that can't be measured in volts or watts. It's your journey, evolved.</p>
+                                <h3><font color='yellow'>Price: 26923$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                               </svg> GET
@@ -430,14 +352,15 @@
                     <div class="swiper-wrapper car-swiper">
 
                         <div class="swiper-slide box">
-                            <img src="../pics/soul.png" alt="">
+                            <img src="{% static 'pics/soul.png' %}" alt="">
                             <div class="free">
                                 <h2>Soul</h2>
                                 <p>The Soul S trim offers the perfect balance of comfort, style, and technology that make a great deal all that much smoother. </p>
+                                <h3><font color='yellow'>Price: 19734$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                             <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                           </svg> GET
@@ -447,14 +370,15 @@
                             </div>
                         </div>
                         <div class="swiper-slide box">
-                            <img src="../pics/sorento.png" alt="">
+                            <img src="{% static 'pics/sorento.png' %}" alt="">
                             <div class="free">
                                 <h2>Sorento</h2>
                                 <p>The available X-Line can take you on the rugged path less traveled. With unique to X-Line exterior appearance and impressive handling.</p>
+                                <h3><font color='yellow'>Price: 29841$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                             <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                           </svg> GET
@@ -464,15 +388,16 @@
                             </div>
                         </div>
                         <div class="swiper-slide box">
-                            <img src="../pics/forte.png" alt="">
+                            <img src="{% static 'pics/forte.png' %}" alt="">
                             <div class="free">
                                 <h2>Forte</h2>
                                 <p>The Forte GT-Line comes with newly designed front bumper, grille, and headlights, and adds a host of available advanced technology and convenience features, wrapped in a head-turning package of style upgrades—all available
                                     for a modest fee.</p>
+                                <h3><font color='yellow'>Price: 19234$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                               </svg> GET
@@ -482,14 +407,15 @@
                             </div>
                         </div>
                         <div class="swiper-slide box">
-                            <img src="../pics/stinger.png" alt="">
+                            <img src="{% static 'pics/stinger.png' %}" alt="">
                             <div class="free">
                                 <h2>Stinger</h2>
                                 <p>Propelled by a new 300 horsepower, 2.5L turbocharged engine, the Stinger GT-Line is revamped inside and out for 2022.</p>
+                                <h3><font color='yellow'>Price: 36888$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                             <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                           </svg> GET
@@ -499,14 +425,15 @@
                             </div>
                         </div>
                         <div class="swiper-slide box">
-                            <img src="../pics/niro.png" alt="">
+                            <img src="{% static 'pics/niro.png' %}" alt="">
                             <div class="free">
                                 <h2>NIRO</h2>
                                 <p>This upgrade to the base Niro adds essential driver assist technologies and premium comfort and convenience features to exceptional hybrid range—all in a seriously fun-to-drive package with plenty of interior space.</p>
+                                <h3><font color='yellow'>Price: 24324$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                               </svg> GET
@@ -516,14 +443,15 @@
                             </div>
                         </div>
                         <div class="swiper-slide box">
-                            <img src="../pics/telluride.png" alt="">
+                            <img src="{% static 'pics/telluride.png' %}" alt="">
                             <div class="free">
                                 <h2>Telluride</h2>
                                 <p>The Telluride Nightfall Edition adds a splash of attitude that stands out even when its sleeves are rolled up. Available on AWD versions of the EX Premium and SX trims.</p>
+                                <h3><font color='yellow'>Price: 33239$</font></h3>
                                 <section class="effect_buttons">
 
 
-                                    <a href="./payment.htm" class="effect-btn effect-btn-1">
+                                    <a href="{% url 'payment' %}" class="effect-btn effect-btn-1">
                                         <svg>
                                                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                                               </svg> GET
@@ -597,8 +525,8 @@
 
 
 
-    <script src="./scroll.js"></script>
-    <script src="./script.js"></script>
+    <script src="{% static 'js/scroll.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 </body>
 

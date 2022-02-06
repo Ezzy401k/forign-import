@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>Forign Import-Login</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+        <a href="#" class="logo"> <span>foreign</span>import</a>
+
+        <nav class="navbar">
+            <a href="main">home</a>
+            <a href="{% url 'vehicles' %}">vehicles</a>
+            <a href="{% url 'main' %}#services">services</a>
+            <a href="{% url 'main' %}#features">features</a>
+            <a href="{% url 'main' %}#reviews">reviews</a>
+            <a href="{% url 'main' %}#contact">contacts</a>
+        </nav>
+
+    </header>
+
+
+
+    <div class="wrapper">
+
+        <form method='post'>
+            {% csrf_token %}
+            <h3>user login</h3>
+            <input type="text" name="username" placeholder="username" class="box">
+            <input type="password" name="password" placeholder="password" class="box">
+            <div>
+                {% for message in messages %}
+                    <h1><font color='red'>{{message}}</font></h1>
+                {% endfor %}
+            </div>
+            <p>forget your password <a href="./data/forget.htm">click here</a></p>
+            <input type="submit" value="sign in" class="btn">
+            <p>or login with</p>
+            <div class="buttons">
+                <a href="https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="btn">google</a>
+                <a href="https://www.facebook.com/login.php" class="btn">facebook</a>
+
+            </div>
+            <p>don't have an account <a href="{% url 'signup' %}">create one</a> </p>
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>

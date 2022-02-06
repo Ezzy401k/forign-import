@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <title>Forign Import-Signup</title>
+        <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+    <body>
+
+        <header class="header">
+
+            <div id="menu-btn" class="fas fa-bars"></div>
+        
+            <a href="{% url 'main' %}" class="logo"> <span>foreign</span>import</a>
+        
+            <nav class="navbar">
+                <a href="/">home</a>
+                <a href="#vehicles">vehicles</a>
+                <a href="#services">services</a>
+                <a href="#features">features</a>
+                <a href="#reviews">reviews</a>
+                <a href="#contacts">contacts</a>
+            </nav>
+        
+            
+        </header>
+
+
+
+        <div class="wrapper">
+            <h1>Sign Up</h1>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="first_name" placeholder="First Name">
+                <input type="text" name="last_name" placeholder="Last Name">
+                <input type="text" name="username" placeholder="Username">
+                <input type="email" name="email" placeholder="Email Address">
+                <input type="password" name="password1" placeholder="Password">
+                <input type="password" name="password2" placeholder="Confirm Password">
+                <div>
+                    {% for message in messages%}
+                        <h1><font color='red'>{{message}}</font></h1>
+                    {% endfor %}
+                </div>
+                <input type="submit"  value="SignUp now" class="btn">
+            </form>
+            <p>Already User? <a href="{% url 'main' %}">Login here!</a></p>
+        </div>
+    </body>
+</html>
+
