@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600&display=swap');
+:root {
+    --yellow: #f9d806da;
+    --light-yellow: #ffee80;
+    --black: #130f40;
+    --light-color: #666;
+    --white: #fff;
+    --border: .1rem solid rgba(0, 0, 0, .1);
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+* {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #282828;
+    margin-top: 100px;
+}
+
+.pay-form {
+    margin: 1rem auto;
+    max-width: 60rem;
+    margin-bottom: 60px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    border-radius: 5rem;
+}
+
+.pay-form img {
+    height: 13rem;
+    width: 13rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: -42px;
+}
+
+.pay-input {
+    margin: 1rem auto;
+    width: 60%;
+    margin-top: -60px;
+    height: 5rem;
+    display: flex;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    border-radius: 2rem;
+    padding-left: 10px;
+    margin-left: 178px;
+}
+
+.paybtn {
+    margin-left: 53%;
+    width: 100px;
+    height: 40px;
+    border-radius: 14px;
+}
+
+.pay0 {
+    background-color: gray;
+}
+
+.pay0:hover {
+    background-color: purple;
+}
+
+.pay1 {
+    background-color: gray;
+}
+
+.pay1:hover {
+    background-color: blue;
+}
+
+.pay2 {
+    background-color: gray;
+}
+
+.pay2:hover {
+    background-color: green;
+}
+
+.pay3 {
+    background-color: gray;
+}
+
+.pay3:hover {
+    background-color: orange;
+}
+
+h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    color: rgb(255 235 0 / 75%);
+    text-align: center;
+}
+
+@media(max-width:991px) {
+    html {
+        font-size: 55%;
+    }
+    .header {
+        padding: 2rem;
+    }
+    .header.active {
+        padding: 2rem;
+    }
+    section {
+        padding: .01rem;
+    }
+}
+
+@media(max-width:768px) {
+    .header #menu-btn {
+        display: block;
+    }
+    .header #menu-btn.fa-times {
+        transform: rotate(180deg);
+    }
+    .header #login-btn i {
+        display: block;
+    }
+    .header #login-btn .btn {
+        display: none;
+    }
+    .header .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-top: var(--border);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    .header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        background: #282828;
+    }
+    .header .navbar a {
+        text-align: center;
+        display: block;
+        margin: 2rem;
+        font-size: 2rem;
+        color: white;
+        box-shadow: var(--box-shadow);
+        padding: 1rem;
+    }
+    .header .navbar a:hover {
+        background: rgba(255, 255, 0, 0.527);
+        color: var(--black);
+    }
+}
+
+@media(max-width:450px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+.car-swiper {
+    display: flex;
+    flex-direction: row;
+}
