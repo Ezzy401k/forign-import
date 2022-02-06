@@ -9,7 +9,7 @@
     height: 100vh;
     position: fixed;
     width: 100%;
-    background-image: url("./ship-scaled.jpg");
+    background-image: url('/static/pics/ship-scaled.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

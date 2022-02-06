@@ -17,7 +17,6 @@
     box-sizing: border-box;
     outline:  none; border: none;
     text-decoration: none;
-    text-transform: capitalize;
     transition: .2s linear;
 }
 
@@ -297,6 +296,7 @@ section{
 }
 
 .services .box-container .box{
+    background-color:rgb(0, 0, 0);
     text-align: center;
     padding: 2rem;
     border-radius: 5rem;
@@ -345,7 +345,7 @@ section{
 .newsletter{
     padding: 6rem;
     text-align: center;
-    background: url(./car2.png) no-repeat;
+    background: url('/static/pics/car2.png') no-repeat;
     background-position: center;
     background-size: cover;
 }
@@ -414,7 +414,7 @@ section{
 
 .group .group-slider .box img{
     height: 13rem;
-    width: 13rem;
+    width: auto;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -611,9 +611,4 @@ section{
     html{
         font-size: 50%;
     }
-}
-
-.car-swiper{
-    display: flex;
-    flex-direction: row;
 }

@@ -3,7 +3,7 @@
     font-family: "Poppins", sans-serif;
 }
 body{
-    background-image: url(./ship-scaled.jpg);
+    background-image: url('/static/pics/ship-scaled.jpg');
     background-position: center center;
     opacity: .9;
 }
@@ -35,12 +35,7 @@ p a{
     color: var(--yellow);
     text-decoration: underline;}
 
-.f-wrapper{
-    width: 350px;
-    height: 235px;
-    background: rgb(3, 3, 3);
-    color: rgb(255, 255, 255);
-    margin: 160px auto;
-    border-radius: 34px;
-    padding: 10px 30px;
+h3{
+    margin-left: 33%;
+    font-size: 19px;
 }
