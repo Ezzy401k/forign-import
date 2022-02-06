@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+}
+body{
+    background-image: url('/static/pics/ship-scaled.jpg');
+    background-position: center center;
+    opacity: .9;
+}
+.wrapper{
+    width: 350px;
+    height: 425px;
+    background: rgb(3, 3, 3);
+    color: rgb(255, 255, 255);
+    margin: 160px auto;
+    border-radius: 6px;
+    padding: 10px 30px;
+}
+h1{
+    text-align: center;
+    margin: 1rem;
+}
+input{
+    display: block;
+    width: 90%;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+p {text-align: center;} 
+
+p a{
+    color: var(--yellow);
+    text-decoration: underline;}
+
+h3{
+    margin-left: 33%;
+    font-size: 19px;
+}
